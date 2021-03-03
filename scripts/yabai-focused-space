@@ -1,0 +1,6 @@
+#! /bin/zsh
+# Note the trailing jq -s . "slurps" the stream of entities into an array
+
+
+/usr/local/bin/yabai -m query --spaces | /usr/local/bin/jq '.[]' | /usr/local/bin/jq 'select(.focused == 1)' | /usr/local/bin/jq '.index'
+
